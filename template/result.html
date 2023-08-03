@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+		<div class="container">
+
+		</div>
+		<h2>ML movie binary & multiclass classification</h2>
+
+	</div>
+
+	<h2>Review classification results<h2>
+	<div class="results">
+
+	{% if prediction > 0.5%}
+	<h2 style="color:blue; center;">Positive  Review (Movie is good)</h2>
+	{% elif prediction < 0.5%}
+	<h2 style="color:red; center;">Negative Review (Movie is bad) </h2>
+	{% endif %}
+
+    <h2 style="center;">Rating: {{rating}}</h2>
+
+
+        </div>
+
+
+</body>
+</html>
