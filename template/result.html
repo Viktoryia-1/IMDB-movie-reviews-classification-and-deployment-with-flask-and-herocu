@@ -17,9 +17,9 @@
 	<div class="results">
 
 	{% if prediction > 0.5%}
-	<h2 style="color:blue; center;">Positive  Review (Movie is good)</h2>
+	<h2 style="color:blue; center;">Positive Review</h2>
 	{% elif prediction < 0.5%}
-	<h2 style="color:red; center;">Negative Review (Movie is bad) </h2>
+	<h2 style="color:red; center;">Negative Review</h2>
 	{% endif %}
 
     <h2 style="center;">Rating: {{rating}}</h2>
