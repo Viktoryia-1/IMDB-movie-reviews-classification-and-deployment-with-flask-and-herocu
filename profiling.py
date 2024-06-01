@@ -13,7 +13,7 @@ import functools
 
 
 def profiler(fn):
-    #@functools.wraps(fn)
+    @functools.wraps(fn)
     def wrapper(*args, **kwargs):
         profile = LineProfiler()
         profiled_fn = profile(fn)
@@ -33,7 +33,6 @@ def custom_standardization(input_data):
 model = tf.keras.models.load_model('/Users/Viktoryia/Documents/t/checkpoints_171840')
 
 app = Flask(__name__, template_folder='template')
-
 
 @app.route('/', methods=['GET'])
 @profiler

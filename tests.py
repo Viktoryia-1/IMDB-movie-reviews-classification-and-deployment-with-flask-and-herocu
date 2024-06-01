@@ -14,6 +14,7 @@ class FlaskTest(unittest.TestCase):
         self.app = app.test_client()
         self.app.testing = True
 
+
     def test_start_page(self):
         resp = self.app.get('/')
         assert resp.status_code == 200
@@ -29,6 +30,7 @@ class FlaskTest(unittest.TestCase):
     def test_nums(self):
         resp = self.app.post('/predict', data=dict(message='   4000 '))
         self.assertEqual(resp.data, second=b'Feedback contains only numbers!', msg='Num test')
+
 
     def test_result(self):
         resp = self.app.post('/predict', data=dict(message='It\'s best movie ever!'))
